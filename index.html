@@ -1,43 +1,332 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Booz Allen Cloud Broker : The open cloud broker">
+    <title>Booz Allen Cloud Broker by booz-allen-hamilton</title>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <title>Booz Allen Cloud Broker</title>
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
-
   <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/booz-allen-hamilton/cloudbroker">View on GitHub</a>
-
-          <h1 id="project_title">Booz Allen Cloud Broker</h1>
-          <h2 id="project_tagline">The open cloud broker</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/booz-allen-hamilton/cloudbroker/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/booz-allen-hamilton/cloudbroker/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
+    <div class="wrapper">
+      <header>
+        <h1>Booz Allen Cloud Broker</h1>
+        <p>The open cloud broker</p>
+        <p class="view"><a href="https://github.com/booz-allen-hamilton/projectjellyfish">View the Project on GitHub <small>booz-allen-hamilton/projectjellyfish</small></a></p>
+        <ul>
+          <li><a href="https://github.com/booz-allen-hamilton/projectjellyfish/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/booz-allen-hamilton/projectjellyfish/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/booz-allen-hamilton/projectjellyfish">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
         <h1>
 <a name="official-release-october-20-2014" class="anchor" href="#official-release-october-20-2014"><span class="octicon octicon-link"></span></a>Official Release October 20, 2014</h1>
 
 <h2>
+<a name="welcome-to-project-jellyfish" class="anchor" href="#welcome-to-project-jellyfish"><span class="octicon octicon-link"></span></a>Welcome to Project Jellyfish</h2>
+
+<p>Jellyfish is Booz Allen Hamilton's hybrid, automated, and customizable cloud management and brokerage solution. Jellyfish helps administrators track resource utilization and costs, simplifies the process of requesting cloud resources, and reduces the time required to acquire services. As a result, organizations can effectively manage their increasing number of cloud resources to ensure compliance with security, cost, and time requirements.</p>
+
+<h3>
+<a name="architecture" class="anchor" href="#architecture"><span class="octicon octicon-link"></span></a>Architecture</h3>
+
+<p>Jellyfish is made up of three components, the Cloud Portal, the Cloud Engine, and the Cloud Gateway. Each component serves a specific function, and when integrated together, they provide a flexible framework with the ability ot interface to multiple cloud providers behind a single portal.<br>
+<strong>Cloud Portal</strong><br>
+The Cloud Portal is a single pane of glass that users can use to browse and order a variety of IaaS, PaaS, and SaaS resources from the customizable storefront catalog. It also serves as a single point of entry for administrators to login and manage marketplace resources and user accounts. The Cloud Portal is built using Drupal 7.24.<br></p>
+
+<p><strong>Cloud Engine</strong><br>
+The Cloud Engine provides the core automation capabilities of the cloud broker. The Jellyfish Cloud Engine uses  Apache ServiceMix 5.1.2 as the messaging engine and Chef as the configuration management engine.<br></p>
+
+<p><strong>Cloud Gateway</strong><br>
+The Cloud Gateway is ManageIQ, and it enables integration between the cloud broker and cloud providers. The Cloud Gateway provides multi-cloud provisioning and management capabilities as serves as a central point for all the user's cloud resources.</p>
+
+<h2>
 <a name="get-started" class="anchor" href="#get-started"><span class="octicon octicon-link"></span></a>Get Started</h2>
 
-<p>Coming Soon</p>
+<h3>
+<a name="installing-the-cookbooks" class="anchor" href="#installing-the-cookbooks"><span class="octicon octicon-link"></span></a>Installing the Cookbooks</h3>
+
+<ol>
+<li>
+<p>Log in to the appropriate VM as the root user</p>
+
+<blockquote>
+<p>ssh root@ -i server-cert-key.pem</p>
+</blockquote>
+</li>
+<li>
+<p>Update Vm and install telnet, wget, and unzip and dependencies</p>
+
+<blockquote>
+<p>[root@server ~]# yum update –y</p>
+
+<p>[root@server ~]# yum install -y vim telnet unzip wget git</p>
+</blockquote>
+</li>
+<li>
+<p>Go to <a href="http://gettingstartedwithchef.com/first-steps-with-chef.html">http://gettingstartedwithchef.com/first-steps-with-chef.html</a> and follow the instructions to install Chef on your VM.</p>
+
+<blockquote>
+<p>Thank you for installing Chef!</p>
+</blockquote>
+</li>
+<li><p>Using the instructions on <a href="http://gettingstartedwithchef.com/first-steps-with-chef.html">http://gettingstartedwithchef.com/first-steps-with-chef.html</a>, create a cookbook.</p></li>
+<li>
+<p>Run the appropriate Cookbook</p>
+
+<ul>
+<li>
+<p>Cloud Portal</p>
+
+<blockquote>
+<p>[root@server ~/chef-repo]# knife cookbook site install bah-marketplace</p>
+</blockquote>
+</li>
+<li>
+<p>Cloud Engine</p>
+
+<blockquote>
+<p>[root@server ~/chef-repo]# knife cookbook site install servicemix</p>
+</blockquote>
+</li>
+<li>
+<p>Cloud Gateway</p>
+
+<blockquote>
+<p>[root@server ~/chef-repo]# knife cookbook site install manageiq</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>Run the appropriate Chef-solo command (this could take up to 10 or 15 minutes)</p>
+
+<ul>
+<li>
+<p>Cloud Portal</p>
+
+<blockquote>
+<p>[root@server ~/chef-repo]# chef-solo –c solo.rb –j roles/bahmarketplace.json</p>
+</blockquote>
+</li>
+<li>
+<p>Cloud Engine</p>
+
+<blockquote>
+<p>[root@server ~/chef-repo]# chef-solo –c solo.rb –j roles/servicemix.json</p>
+</blockquote>
+</li>
+<li>
+<p>Cloud Gateway</p>
+
+<blockquote>
+<p>[root@server ~/chef-repo]# chef-solo –c solo.rb –j roles/manageiq.json</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ol>
+
+<h3>
+<a name="configuring-the-cloud-portal" class="anchor" href="#configuring-the-cloud-portal"><span class="octicon octicon-link"></span></a>Configuring the Cloud Portal</h3>
+
+<ol>
+<li>
+<p>Configure Communications</p>
+
+<ul>
+<li>Within the Cloud Portal, navigate to Store&gt;Broker Order Communications</li>
+<li>Enter <em>http://CLOUD_ENGINE_IP:8183/orders/create/</em> in "Transmit URL"</li>
+<li>Enter the ServiceMix Username and Password</li>
+<li>Also on this page, note the Receive-Api Key required to configure the Cloud Engine</li>
+</ul>
+</li>
+<li>
+<p>Add/Maintain a Catalog of Items
+Create Application and Add</p>
+
+<ul>
+<li>Navigate to Store&gt;Products&gt;Add a Product</li>
+<li>Choose "Create Application" or choose the type of item you are adding to the catalog</li>
+<li>Enter the specifics for the Application Product
+
+<ul>
+<li>Enter a unique Product SKU</li>
+<li>Enter the title of the application catalog</li>
+<li>Enter the price</li>
+<li>Click on "Active" for status</li>
+<li>Select the size of your product</li>
+<li>Choose the server type of the project</li>
+<li>Choose a server size</li>
+<li>Choose a CPU</li>
+<li>Choose the size of RAM memory</li>
+<li>Choose the OS</li>
+<li>Choose the Networking option</li>
+<li>Choose the Elasticity option</li>
+<li>Choose the Storage option</li>
+</ul>
+</li>
+<li>Click "Save Product"</li>
+<li>
+<p>Confirm the product was added</p>
+
+<ul>
+<li>Navigate to Store&gt;Products</li>
+<li>Locate and confirm the product was added to the store</li>
+</ul>
+</li>
+<li><p>Navigate to Content&gt;Add Content&gt;Product</p></li>
+<li>Enter the Product Name</li>
+<li>Enter a Description for the product</li>
+<li>Click "Choose File" and upload an image for the product</li>
+<li>Click "Add Existing Product"
+
+<ul>
+<li>In the product field, enter the SKU for the item you created</li>
+</ul>
+</li>
+<li>Click "Add Product"</li>
+<li>Click "Save"</li>
+<li>Visit the Marketplace Catalog and confirm the product you added is located in the catalog</li>
+</ul>
+</li>
+<li>
+<p>Create a Form Email Configuration</p>
+
+<ul>
+<li>Navigate to Configuration &gt; Workflow &gt; Rules</li>
+<li>On the Rules page, under Active Rules, locate the rules titled "Email when project_req set to Approved"
+
+<ul>
+<li>Click on the rule to edit</li>
+</ul>
+</li>
+<li>In the rule editing screen, locate the Actions elements table and click the "+Add Action" button</li>
+<li>On the Add a New Action page, click on the dropdown menu to add a variable
+
+<ul>
+<li>Locate "Send Mail" from the System block and click on it</li>
+</ul>
+</li>
+<li>On the Add a New Action page, add the following attributes:
+
+<ul>
+<li>Recipient's email</li>
+<li>Subject of the email (add the following indentifier at the end of the  email to add the project add code [node:field-app-code]</li>
+<li>Add the body of the email</li>
+<li>Click Save</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Update CRON Job Run Frequency</p>
+
+<ul>
+<li>On the administrative toolbar on the top of the page, navigate to Configuration&gt;System&gt;Cron Settings&gt;Settings</li>
+<li>On the Settings page, under "Single Job Settings," locate the job called "bah_order_com_cron," and adjust to your desired schedule</li>
+<li>Click Save.  If the changes are successful, a confirmation message will appear at the top of the screen. If you do not see this message, refresh the page, check "bah_order_com_cron," and try again.</li>
+</ul>
+</li>
+<li>
+<p>LDAP Configuration</p>
+
+<ul>
+<li>Navigate to Configuration&gt;People&gt;LDAP Configuration</li>
+<li>Settings Tab
+
+<ul>
+<li>The Settings page is the default tab when accessing the LDAP Configuration. All items on the Settings page should remain default.</li>
+</ul>
+</li>
+<li>Servers tab
+
+<ul>
+<li>You can add multiple LDAP Servers to use with the LDAP Authentication module. Server settings can be edited via the "List" tab once edited.</li>
+</ul>
+</li>
+<li>User Tab
+
+<ul>
+<li>This tab specifically addresses how user accounts are provisioned, synched, and updated between Drupal and Active Directory. In this envoironment, Drupal only pulls information from Active Directory so the BASIC PROVISIONING TO LDAP SETTINGS are left at their default value</li>
+</ul>
+</li>
+<li>Authentication Tab
+
+<ul>
+<li>Authenticate LDAP users</li>
+</ul>
+</li>
+<li>Authorization
+
+<ul>
+<li>This tab allows for Active Directory Security Groups to be mapped to roles and organic groups defines within Drupal and providing role Based Access to the marketplace</li>
+</ul>
+</li>
+<li>Project Configuration
+
+<ul>
+<li>When a new project has been requested, the marketplace must be updated to include the project APP code and the funding amount available for the project. This creation will allow associated users to access funds and the rights to provision the environment. Navigate to Content &gt; Add Content &gt; Project to create a new project and populate the appropriate title, organic group credits, and application code information.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Updating FAQs</p>
+
+<ul>
+<li>In the toolbar, navigate to Content</li>
+<li>Select "FAQ" from the Type drop down menu and click Filter</li>
+<li>Click "+ Add Content" anc click on FAQ</li>
+<li>Create an FAQ by filling in the question and response fields and then click Save</li>
+</ul>
+</li>
+</ol>
+
+<h3>
+<a name="configuring-the-cloud-engine" class="anchor" href="#configuring-the-cloud-engine"><span class="octicon octicon-link"></span></a>Configuring the Cloud Engine</h3>
+
+<ol>
+<li>
+<p>Use your favorite command-line accessible text editor to edit the Cloud Engine configruration file:</p>
+
+<blockquote>
+<p>/opt/cloudengine/servicemix/etc/com.bah.cloudengine.cfg</p>
+</blockquote>
+</li>
+<li>
+<p>Make the following changes to the file, then write+exit:</p>
+
+<ul>
+<li>Insert the Cloud Portal, Engine, or Gateway IP addresses where they are referenced</li>
+<li>Set "marketplace.restKey" to the Receive-API Key from the Broker Order Communications Page in the Cloud Portal</li>
+</ul>
+</li>
+<li>
+<p>Restart the Cloud Engine</p>
+
+<blockquote>
+<p>service servicemix-service restart</p>
+</blockquote>
+</li>
+</ol>
+
+<h3>
+<a name="configuring-the-cloud-gateway" class="anchor" href="#configuring-the-cloud-gateway"><span class="octicon octicon-link"></span></a>Configuring the Cloud Gateway</h3>
+
+<ol>
+<li>Adding templates to ManageIQ</li>
+<li>
+</li>
+</ol>
 
 <h2>
 <a name="learn-more" class="anchor" href="#learn-more"><span class="octicon octicon-link"></span></a>Learn more</h2>
@@ -54,7 +343,9 @@
 <li>Cookbooks</li>
 <li>?</li>
 <li>??</li>
-</ul><h2>
+</ul>
+
+<h2>
 <a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
 
 <p>See <a href="LICENSE.txt">LICENSE.txt</a></p>
@@ -65,16 +356,11 @@
 <p>See <a href="EXPORTNOTICE.txt">EXPORTNOTICE.txt</a></p>
       </section>
     </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Booz Allen Cloud Broker maintained by <a href="https://github.com/booz-allen-hamilton">booz-allen-hamilton</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
+    <footer>
+      <p>Project maintained by <a href="https://github.com/booz-allen-hamilton">booz-allen-hamilton</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
-
   </body>
 </html>
