@@ -28,7 +28,7 @@
       </header>
       <section>
         <h1>
-<a name="official-release-october-20-2014" class="anchor" href="#official-release-october-20-2014"><span class="octicon octicon-link"></span></a>Official Release October 20, 2014</h1>
+<a name="official-release-october-22-2014" class="anchor" href="#official-release-october-22-2014"><span class="octicon octicon-link"></span></a>Official Release October 22, 2014</h1>
 
 <h2>
 <a name="welcome-to-project-jellyfish" class="anchor" href="#welcome-to-project-jellyfish"><span class="octicon octicon-link"></span></a>Welcome to Project Jellyfish</h2>
@@ -289,6 +289,7 @@ Create Application and Add</p>
 <li>Create an FAQ by filling in the question and response fields and then click Save</li>
 </ul>
 </li>
+<li><p>Adding Items to the Catalog</p></li>
 </ol>
 
 <h3>
@@ -323,15 +324,114 @@ Create Application and Add</p>
 <a name="configuring-the-cloud-gateway" class="anchor" href="#configuring-the-cloud-gateway"><span class="octicon octicon-link"></span></a>Configuring the Cloud Gateway</h3>
 
 <ol>
-<li>Adding templates to ManageIQ</li>
 <li>
+<p>Adding Providers</p>
+
+<ul>
+<li>
+<p>Cloud Providers</p>
+
+<ul>
+<li>Navigate to Clouds&gt;Providers</li>
+<li>Click on the Configuration drop down menu, and select "+ add a New Cloud Provider"</li>
+<li>In the Basic Information section, add a name, select a provider type from the drop down menu, and fill in corresponding fields</li>
+<li>In the Credentials section, enter your security information for the provider you selected</li>
+<li>Click Validate</li>
+<li>Click Add</li>
+</ul>
+</li>
+<li>
+<p>Infrstructure Providers</p>
+
+<ul>
+<li>Navigate to Infrastructure&gt;Providers</li>
+<li>Click on the Configuration drop down menu, and select "+ add a New Infrastructure Provider"</li>
+<li>In the Basic Information section, add a name, select a provider type from the drop down menu, and fill in corresponding fields</li>
+<li>In the Credentials section, enter your security information for the provider you selected</li>
+<li>Click Validate</li>
+<li>Click Add</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Adding Catalog Items
+
+<ul>
+<li>Navigate to Services&gt;Catalogs</li>
+<li>Click on the Catalog Items accordion tab</li>
+<li>Click on the Configuration drop down menu, and select "+ add a New Catalog Item"</li>
+<li>Select a Catalog Item Type from the drop down menu</li>
+<li>In the Basic Info section, fill in the item name and description. If you would like to assign the item to a catalog, check with "Display in Catalog" box, and fill in the required information.</li>
+<li>Go to the Request Info section. Navigate through each sub-tab, and fill in the information required by the provider (at a minimum, field names marked with an asterick are required)</li>
+<li>Click Add</li>
+</ul>
+</li>
+<li>Configuring Script to Update Cloud Engine
+
+<ul>
+<li>Navigate to Automate&gt;Explorer</li>
+<li>Click on the Datastore folder
+
+<ul>
+<li>Select "Add a New Domain" from the Configuration drop down menu</li>
+<li>Enter "BAH" for the Name</li>
+<li>Enter "Booz Allen Hamilton Customization" for the Description</li>
+<li>Check enabled</li>
+<li>Click Save</li>
+</ul>
+</li>
+<li>Navigate to ManageIQ&gt;Service&gt;Provisioning&gt;StatsMachines&gt;Methods</li>
+<li>Select the Instances tab
+
+<ul>
+<li>Select "Add a New Instance" from the Configuration drop down menu</li>
+<li>Enter "update_servicemix_and_chef" for the Name and the Display Name</li>
+<li>Go to the Fields section
+
+<ul>
+<li>Find "execute" under the Name column</li>
+<li>Enter update_servicemix_and_chef for the Value</li>
+<li>Click Add</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Navigate to ManageIQ&gt;Service&gt;Provisioning&gt;StateMachines&gt;Methods</li>
+<li>Select the Methods tab
+
+<ul>
+<li>Click on Configuration -&gt; Add a New Method</li>
+<li>Enter update_servicemix_and_chef for the Name</li>
+<li>Enter update_servicemix_and_chef for the Display Name</li>
+<li>For the Location, select inline</li>
+<li>Under Data, paste the code from [update_servicemix_and_chef code link]</li>
+<li>Click Add</li>
+</ul>
+</li>
+<li>Navigate to ManageIQ&gt;Service&gt;Provisioning&gt;StateMachines&gt;ServiceProvision_Template&gt;CatalogItemInitialization
+
+<ul>
+<li>Click on Configuration -&gt; Copy this Instance</li>
+<li>For the To Domain value, select BAH from the drop down list</li>
+<li>Check the Copy to same path</li>
+<li>Click Copy</li>
+</ul>
+</li>
+<li>Navigate to ManageIQ&gt;Service&gt;Provisioning&gt;StateMachines&gt;ServiceProvision_Template&gt;CatalogItemInitialization
+
+<ul>
+<li>Select "Edit this Instance" in the Configuration drop down menu</li>
+<li>Go to the Fields section</li>
+<li>Under the Name column, find post1</li>
+<li>For the Value, enter /Service/Provisioning/StateMachines/Methods/update_servicemix_and_chef</li>
+<li>Click Save</li>
+</ul>
+</li>
+<li>Create a new catalof item or select an existing one</li>
+<li>For the Provisioning Entry Point, set the value to /BAH/Service/Provisioning/StateMachines/ServiceProvision_Template/CatalogItemInitialization</li>
+</ul>
 </li>
 </ol>
-
-<h2>
-<a name="learn-more" class="anchor" href="#learn-more"><span class="octicon octicon-link"></span></a>Learn more</h2>
-
-<p>Coming Soon</p>
 
 <h2>
 <a name="list-of-our-repos" class="anchor" href="#list-of-our-repos"><span class="octicon octicon-link"></span></a>List of our Repos</h2>
@@ -341,12 +441,58 @@ Create Application and Add</p>
 <li>ManageIQ</li>
 <li>Marketplace</li>
 <li>Cookbooks</li>
-<li>?</li>
-<li>??</li>
 </ul>
 
 <h2>
+<a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h2>
+
+<p>Jellyfish is built using three virtual machines for the three promary components. At a minimum, the cloud broker requires the following hardware, operating systems, and communications settings to support the suite of open source products.</p>
+
+<p><strong>Cloud Portal Requirements</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th align="center">Cloud Portal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Operating System</td>
+<td align="center">RHEL 6.5 ot CentOS 6.5</td>
+</tr>
+<tr>
+<td>Memory</td>
+<td align="center">8 BG</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td>Disk</td>
+<td align="center">100 GB</td>
+</tr>
+<tr>
+<td>TCP Ports</td>
+<td align="center">22, 80, 443, 8181</td>
+</tr>
+<tr>
+<td>UDP Ports</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>Network Access</td>
+<td align="center">Public facing, access to broker services (8183)</td>
+</tr>
+</tbody>
+</table>
+
+<h2>
 <a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Booz Allen Hamilton’s Project Jellyfish Release 1 will be comprised of three primary modules:  Gateway (ManageIQ), Engine (Apache Service Mix) and Marketplace (Drupal).  Except where otherwise noted, all Project Jellyfish source files are licensed under the GNU General Public License, version 2 or later. That means you are free to download, reuse, modify, and distribute any files hosted in Project Jellyfish’s Git repositories under the terms of either the GPL version 2 (or later) in combination with any code with any license that is compatible with either versions 2 or 3, plus the licenses associated with other open source components of Project Jellyfish (e.g., Apache 2.0 and GPLv2 for ManageIQ). Detailed license files can be found in each repo, but at a high level, the licensing models for Release 1 are as follows: the Marketplace is licensed under GPLv2; the Engine is licensed under a combination of several license models (e.g., GPLv2, Apache2, LGPL2.1, and CDDL 1.1); and the Gateway is licensed under Apache 2.0 and GPL.</p>
 
 <p>See <a href="LICENSE.txt">LICENSE.txt</a></p>
 
