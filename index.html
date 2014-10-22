@@ -18,7 +18,7 @@
     <div class="wrapper">
       <header>
         <h1>Booz Allen Cloud Broker</h1>
-        <p>The open cloud broker</p>
+        <p>The Open Cloud Broker</p>
         <p class="view"><a href="https://github.com/booz-allen-hamilton/projectjellyfish">View the Project on GitHub <small>booz-allen-hamilton/projectjellyfish</small></a></p>
         <ul>
           <li><a href="https://github.com/booz-allen-hamilton/projectjellyfish/zipball/master">Download <strong>ZIP File</strong></a></li>
@@ -83,15 +83,13 @@ The Cloud Gateway is ManageIQ, and it enables integration between the cloud brok
 <p>Run the appropriate Cookbook</p>
 
 <ul>
-<li>Cloud Portal</li>
-</ul>
+<li>
+<p>Cloud Portal</p>
+
+<blockquote>
+<p>[root@server ~/chef-repo]# knife cookbook site install bah-marketplace</p>
+</blockquote>
 </li>
-</ol>
-
-<div class="highlight highlight-Bash"><pre><span class="o">[</span>root@server ~/chef-repo<span class="o">]</span><span class="nv">$ </span>knife cookbook site install bah-marketplace
-</pre></div>
-
-<ul>
 <li>
 <p>Cloud Engine</p>
 
@@ -107,8 +105,7 @@ The Cloud Gateway is ManageIQ, and it enables integration between the cloud brok
 </blockquote>
 </li>
 </ul>
-
-<ol>
+</li>
 <li>
 <p>Run the appropriate Chef-solo command (this could take up to 10 or 15 minutes)</p>
 
@@ -314,14 +311,11 @@ Create Application and Add</p>
 <li>Set "marketplace.restKey" to the Receive-API Key from the Broker Order Communications Page in the Cloud Portal</li>
 </ul>
 </li>
-<li>
-<p>Restart the Cloud Engine</p>
-
-<blockquote>
-<p>service servicemix-service restart</p>
-</blockquote>
-</li>
+<li><p>Restart the Cloud Engine</p></li>
 </ol>
+
+<div class="highlight highlight-Bash"><pre>service servicemix-service restart
+</pre></div>
 
 <h3>
 <a name="configuring-the-cloud-gateway" class="anchor" href="#configuring-the-cloud-gateway"><span class="octicon octicon-link"></span></a>Configuring the Cloud Gateway</h3>
