@@ -1,44 +1,60 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Booz Allen Cloud Broker by booz-allen-hamilton</title>
+    <meta name="description" content="Booz Allen Cloud Broker : The Open Cloud Broker">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="javascripts/scale.fix.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <title>Booz Allen Cloud Broker</title>
   </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Booz Allen Cloud Broker</h1>
-        <p>The Open Cloud Broker</p>
-        <p class="view"><a href="https://github.com/booz-allen-hamilton/projectjellyfish">View the Project on GitHub <small>booz-allen-hamilton/projectjellyfish</small></a></p>
-        <ul>
-          <li><a href="https://github.com/booz-allen-hamilton/projectjellyfish/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/booz-allen-hamilton/projectjellyfish/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/booz-allen-hamilton/projectjellyfish">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>
-<a name="official-release-october-22-2014" class="anchor" href="#official-release-october-22-2014"><span class="octicon octicon-link"></span></a>Official Release October 22, 2014</h1>
 
-<h2>
-<a name="welcome-to-project-jellyfish" class="anchor" href="#welcome-to-project-jellyfish"><span class="octicon octicon-link"></span></a>Welcome to Project Jellyfish</h2>
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/booz-allen-hamilton/projectjellyfish">View on GitHub</a>
+
+          <h1 id="project_title">Booz Allen Cloud Broker</h1>
+          <h2 id="project_tagline">The Open Cloud Broker</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/booz-allen-hamilton/projectjellyfish/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/booz-allen-hamilton/projectjellyfish/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="welcome-to-project-jellyfish" class="anchor" href="#welcome-to-project-jellyfish" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to Project Jellyfish</h1>
 
 <p>Jellyfish is Booz Allen Hamilton's hybrid, automated, and customizable cloud management and brokerage solution. Jellyfish helps administrators track resource utilization and costs, simplifies the process of requesting cloud resources, and reduces the time required to acquire services. As a result, organizations can effectively manage their increasing number of cloud resources to ensure compliance with security, cost, and time requirements.</p>
 
-<h3>
-<a name="architecture" class="anchor" href="#architecture"><span class="octicon octicon-link"></span></a>Architecture</h3>
+<h2>
+<a id="contents" class="anchor" href="#contents" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contents</h2>
 
-<p>Jellyfish is made up of three components, the Cloud Portal, the Cloud Engine, and the Cloud Gateway. Each component serves a specific function, and when integrated together, they provide a flexible framework with the ability ot interface to multiple cloud providers behind a single portal.<br>
+<p><a href="https://github.com/booz-allen-hamilton/projectjellyfish/blob/master/README.md#architecture">Architecture</a><br>
+<a href="https://github.com/booz-allen-hamilton/projectjellyfish/blob/master/README.md#list-of-our-repos">List of Our Repos</a><br>
+<a href="https://github.com/booz-allen-hamilton/projectjellyfish/blob/master/README.md#requirements">Requirements</a><br>
+<a href="https://github.com/booz-allen-hamilton/projectjellyfish/blob/master/README.md#installing-the-cookbooks">Installing the Cookbooks</a><br>
+<a href="https://github.com/booz-allen-hamilton/projectjellyfish/blob/master/README.md#configuring-the-cloud-portal">Configuring the Cloud Portal</a><br>
+<a href="https://github.com/booz-allen-hamilton/projectjellyfish/blob/master/README.md#configuring-the-cloud-engine">Configuring the Cloud Engine</a><br>
+<a href="https://github.com/booz-allen-hamilton/projectjellyfish/blob/master/README.md#configuring-the-cloud-gateway">Configuring the Cloud Gateway</a><br>
+<a href="https://github.com/booz-allen-hamilton/projectjellyfish/blob/master/README.md#license">License</a><br>
+<a href="https://github.com/booz-allen-hamilton/projectjellyfish/blob/master/README.md#export-notice">Export Notice</a></p>
+
+<hr>
+
+<h3>
+<a id="architecture" class="anchor" href="#architecture" aria-hidden="true"><span class="octicon octicon-link"></span></a>Architecture</h3>
+
+<p>Jellyfish is made up of three components, the Cloud Portal, the Cloud Engine, and the Cloud Gateway. Each component serves a specific function, and when integrated together, they provide a flexible framework with the ability to interface to multiple cloud providers behind a single portal.<br>
 <strong>Cloud Portal</strong><br>
 The Cloud Portal is a single pane of glass that users can use to browse and order a variety of IaaS, PaaS, and SaaS resources from the customizable storefront catalog. It also serves as a single point of entry for administrators to login and manage marketplace resources and user accounts. The Cloud Portal is built using Drupal 7.24.<br></p>
 
@@ -49,10 +65,155 @@ The Cloud Engine provides the core automation capabilities of the cloud broker. 
 The Cloud Gateway is ManageIQ, and it enables integration between the cloud broker and cloud providers. The Cloud Gateway provides multi-cloud provisioning and management capabilities as serves as a central point for all the user's cloud resources.</p>
 
 <h2>
-<a name="get-started" class="anchor" href="#get-started"><span class="octicon octicon-link"></span></a>Get Started</h2>
+<a id="list-of-our-repos" class="anchor" href="#list-of-our-repos" aria-hidden="true"><span class="octicon octicon-link"></span></a>List of Our Repos</h2>
+
+<ul>
+<li><a href="https://github.com/booz-allen-hamilton/marketplace">Marketplace</a></li>
+<li><a href="https://github.com/booz-allen-hamilton/servicemix">Cloud Engine</a></li>
+<li><a href="https://github.com/booz-allen-hamilton/manageiq">ManageIQ</a></li>
+<li>Chef Cookbooks:
+
+<ul>
+<li><a href="https://github.com/booz-allen-hamilton/chef-marketplace">Marketplace Cookbook</a></li>
+<li><a href="https://github.com/booz-allen-hamilton/chef-servicemix">ServiceMix Cookbook</a></li>
+<li><a href="https://github.com/booz-allen-hamilton/chef-manageiq">ManageIQ Cookbook</a></li>
+</ul>
+</li>
+</ul>
+
+<h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
+
+<p>Jellyfish is built using three virtual machines for the three primary components. At a minimum, the cloud broker requires the following hardware, operating systems, and communications settings to support the suite of open source products.</p>
+
+<p><strong>Cloud Portal Requirements</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th align="left">Cloud Portal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Operating System</td>
+<td align="left">RHEL 6.5 or CentOS 6.5</td>
+</tr>
+<tr>
+<td>Memory</td>
+<td align="left">8 GB</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td>Disk</td>
+<td align="left">100 GB</td>
+</tr>
+<tr>
+<td>TCP Ports</td>
+<td align="left">22,80,443,8181</td>
+</tr>
+<tr>
+<td>UDP Ports</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td>Network Access</td>
+<td align="left">Public facing and access to broker services (8183)</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Cloud Engine Requirements</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th align="left">Cloud Engine</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Operating System</td>
+<td align="left">RHEL 6.5 or CentOS 6.5</td>
+</tr>
+<tr>
+<td>Memory</td>
+<td align="left">8 GB</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td>Disk</td>
+<td align="left">50 GB</td>
+</tr>
+<tr>
+<td>TCP Ports</td>
+<td align="left">22,8180,8181,8182,8183,8080,61616</td>
+</tr>
+<tr>
+<td>UDP Ports</td>
+<td align="left">61616</td>
+</tr>
+<tr>
+<td>Network Access</td>
+<td align="left">Access to broker services (8180,8181,8182,8080,61616)</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Cloud Gateway Requirements</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th align="left">Cloud Gateway</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Operating System</td>
+<td align="left">RHEL 6.5 or CentOS 6.5</td>
+</tr>
+<tr>
+<td>Memory</td>
+<td align="left">8 GB</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td>Disk</td>
+<td align="left">80 GB</td>
+</tr>
+<tr>
+<td>TCP Ports</td>
+<td align="left">22,443,80</td>
+</tr>
+<tr>
+<td>UDP Ports</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td>Network Access</td>
+<td align="left">Access to cloud providers and broker services (443,8183)</td>
+</tr>
+</tbody>
+</table>
+
+<h2>
+<a id="get-started" class="anchor" href="#get-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Get Started</h2>
 
 <h3>
-<a name="installing-the-cookbooks" class="anchor" href="#installing-the-cookbooks"><span class="octicon octicon-link"></span></a>Installing the Cookbooks</h3>
+<a id="installing-the-cookbooks" class="anchor" href="#installing-the-cookbooks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing the Cookbooks</h3>
 
 <ol>
 <li>
@@ -63,80 +224,26 @@ The Cloud Gateway is ManageIQ, and it enables integration between the cloud brok
 </blockquote>
 </li>
 <li>
-<p>Update Vm and install telnet, wget, and unzip and dependencies</p>
+<p>Update VM and install telnet, wget, and unzip and dependencies</p>
 
 <blockquote>
-<p>[root@server ~]# yum update –y</p>
-
-<p>[root@server ~]# yum install -y vim telnet unzip wget git</p>
+<p>[root@server ~]# yum update –y<br>
+[root@server ~]# yum install -y vim telnet unzip wget git</p>
 </blockquote>
 </li>
 <li>
-<p>Go to <a href="http://gettingstartedwithchef.com/first-steps-with-chef.html">http://gettingstartedwithchef.com/first-steps-with-chef.html</a> and follow the instructions to install Chef on your VM.</p>
-
-<blockquote>
-<p>Thank you for installing Chef!</p>
-</blockquote>
-</li>
-<li><p>Using the instructions on <a href="http://gettingstartedwithchef.com/first-steps-with-chef.html">http://gettingstartedwithchef.com/first-steps-with-chef.html</a>, create a cookbook.</p></li>
-<li>
-<p>Run the appropriate Cookbook</p>
+<p>Follow the specific instructions within the cookbook repo:</p>
 
 <ul>
-<li>
-<p>Cloud Portal</p>
-
-<blockquote>
-<p>[root@server ~/chef-repo]# knife cookbook site install bah-marketplace</p>
-</blockquote>
-</li>
-<li>
-<p>Cloud Engine</p>
-
-<blockquote>
-<p>[root@server ~/chef-repo]# knife cookbook site install servicemix</p>
-</blockquote>
-</li>
-<li>
-<p>Cloud Gateway</p>
-
-<blockquote>
-<p>[root@server ~/chef-repo]# knife cookbook site install manageiq</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li>
-<p>Run the appropriate Chef-solo command (this could take up to 10 or 15 minutes)</p>
-
-<ul>
-<li>
-<p>Cloud Portal</p>
-
-<blockquote>
-<p>[root@server ~/chef-repo]# chef-solo –c solo.rb –j roles/bahmarketplace.json</p>
-</blockquote>
-</li>
-<li>
-<p>Cloud Engine</p>
-
-<blockquote>
-<p>[root@server ~/chef-repo]# chef-solo –c solo.rb –j roles/servicemix.json</p>
-</blockquote>
-</li>
-<li>
-<p>Cloud Gateway</p>
-
-<blockquote>
-<p>[root@server ~/chef-repo]# chef-solo –c solo.rb –j roles/manageiq.json</p>
-</blockquote>
-</li>
+<li><a href="https://github.com/booz-allen-hamilton/chef-marketplace">Marketplace Cookbook</a></li>
+<li><a href="https://github.com/booz-allen-hamilton/chef-servicemix">ServiceMix Cookbook</a></li>
+<li><a href="https://github.com/booz-allen-hamilton/chef-manageiq">ManageIQ Cookbook</a></li>
 </ul>
 </li>
 </ol>
 
 <h3>
-<a name="configuring-the-cloud-portal" class="anchor" href="#configuring-the-cloud-portal"><span class="octicon octicon-link"></span></a>Configuring the Cloud Portal</h3>
+<a id="configuring-the-cloud-portal" class="anchor" href="#configuring-the-cloud-portal" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring the Cloud Portal</h3>
 
 <ol>
 <li>
@@ -293,7 +400,7 @@ Create Application and Add</p>
 </ol>
 
 <h3>
-<a name="configuring-the-cloud-engine" class="anchor" href="#configuring-the-cloud-engine"><span class="octicon octicon-link"></span></a>Configuring the Cloud Engine</h3>
+<a id="configuring-the-cloud-engine" class="anchor" href="#configuring-the-cloud-engine" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring the Cloud Engine</h3>
 
 <ol>
 <li>
@@ -314,11 +421,10 @@ Create Application and Add</p>
 <li><p>Restart the Cloud Engine</p></li>
 </ol>
 
-<div class="highlight highlight-Bash"><pre>service servicemix-service restart
-</pre></div>
+<div class="highlight highlight-Bash"><pre>service servicemix-service restart</pre></div>
 
 <h3>
-<a name="configuring-the-cloud-gateway" class="anchor" href="#configuring-the-cloud-gateway"><span class="octicon octicon-link"></span></a>Configuring the Cloud Gateway</h3>
+<a id="configuring-the-cloud-gateway" class="anchor" href="#configuring-the-cloud-gateway" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring the Cloud Gateway</h3>
 
 <ol>
 <li>
@@ -431,79 +537,28 @@ Create Application and Add</p>
 </ol>
 
 <h2>
-<a name="list-of-our-repos" class="anchor" href="#list-of-our-repos"><span class="octicon octicon-link"></span></a>List of our Repos</h2>
-
-<ul>
-<li>Cloud Engine</li>
-<li>ManageIQ</li>
-<li>Marketplace</li>
-<li>Cookbooks</li>
-</ul>
-
-<h2>
-<a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h2>
-
-<p>Jellyfish is built using three virtual machines for the three promary components. At a minimum, the cloud broker requires the following hardware, operating systems, and communications settings to support the suite of open source products.</p>
-
-<p><strong>Cloud Portal Requirements</strong></p>
-
-<table>
-<thead>
-<tr>
-<th>Component</th>
-<th align="center">Cloud Portal</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Operating System</td>
-<td align="center">RHEL 6.5 ot CentOS 6.5</td>
-</tr>
-<tr>
-<td>Memory</td>
-<td align="center">8 BG</td>
-</tr>
-<tr>
-<td>CPU</td>
-<td align="center">2</td>
-</tr>
-<tr>
-<td>Disk</td>
-<td align="center">100 GB</td>
-</tr>
-<tr>
-<td>TCP Ports</td>
-<td align="center">22, 80, 443, 8181</td>
-</tr>
-<tr>
-<td>UDP Ports</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td>Network Access</td>
-<td align="center">Public facing, access to broker services (8183)</td>
-</tr>
-</tbody>
-</table>
-
-<h2>
-<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
 
 <p>Booz Allen Hamilton’s Project Jellyfish Release 1 will be comprised of three primary modules:  Gateway (ManageIQ), Engine (Apache Service Mix) and Marketplace (Drupal).  Except where otherwise noted, all Project Jellyfish source files are licensed under the GNU General Public License, version 2 or later. That means you are free to download, reuse, modify, and distribute any files hosted in Project Jellyfish’s Git repositories under the terms of either the GPL version 2 (or later) in combination with any code with any license that is compatible with either versions 2 or 3, plus the licenses associated with other open source components of Project Jellyfish (e.g., Apache 2.0 and GPLv2 for ManageIQ). Detailed license files can be found in each repo, but at a high level, the licensing models for Release 1 are as follows: the Marketplace is licensed under GPLv2; the Engine is licensed under a combination of several license models (e.g., GPLv2, Apache2, LGPL2.1, and CDDL 1.1); and the Gateway is licensed under Apache 2.0 and GPL.</p>
 
 <p>See <a href="LICENSE.txt">LICENSE.txt</a></p>
 
 <h2>
-<a name="export-notice" class="anchor" href="#export-notice"><span class="octicon octicon-link"></span></a>Export Notice</h2>
+<a id="export-notice" class="anchor" href="#export-notice" aria-hidden="true"><span class="octicon octicon-link"></span></a>Export Notice</h2>
 
 <p>See <a href="EXPORTNOTICE.txt">EXPORTNOTICE.txt</a></p>
       </section>
     </div>
-    <footer>
-      <p>Project maintained by <a href="https://github.com/booz-allen-hamilton">booz-allen-hamilton</a></p>
-      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
-    </footer>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Booz Allen Cloud Broker maintained by <a href="https://github.com/booz-allen-hamilton">booz-allen-hamilton</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
     
+
   </body>
 </html>
