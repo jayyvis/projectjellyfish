@@ -117,7 +117,7 @@ ssh root@<ip-address> -i server-cert-key.pem
  - Navigate to Services>Catalogs and select the Catalogs accordian tab
  - Click on the Configuration drop down menu, and select "+ add a New Catalog"
  - Enter a name and a simple description for your new catalog and click "add"
-*Currently, the Marketplace can only provision to catalog ID 1. To confirm your catalog id is 1, go to http://<manageiqIP>:3000/api/service_catalog to view your catlogs and their IDs
+*Currently, the Marketplace can only provision to catalog ID 1. To confirm your catalog id is 1, go to http://<manageiqIP>:3000/api/service_catalogs to view your catlogs and their IDs
 
 3) Adding Catalog Items
  - Navigate to Services>Catalogs
